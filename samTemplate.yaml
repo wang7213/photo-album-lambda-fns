@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+Description: HW2 Lambda
+Resources:
+  CDDemoLambda1:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      FunctionName: LF2-search-photos
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: ./search-photos
+      Description: "LF2 for HW2"
+      MemorySize: 128
+      Timeout: 30
+      Role: "arn:aws:iam::766368028132:role/service-role/s3-index-photos-role"
+      Environment:
+        Variables:
+          REGION: us-east-1
+  CDDemoLambda2:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      FunctionName: LF1-index-photos
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: ./index-photos
+      Description: "LF1 for HW2"
+      MemorySize: 128
+      Timeout: 30
+      Role: "arn:aws:iam::766368028132:role/service-role/s3-index-photos-role"
+      Environment:
+        Variables:
+          REGION: us-east-1
