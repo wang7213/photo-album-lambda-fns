@@ -7,7 +7,7 @@ Resources:
     Properties:
       FunctionName: LF2-search-photos
       Handler: lambda_function.lambda_handler
-      Runtime: python3.8
+      Runtime: python 3.8
       CodeUri: ./search-photos
       Description: "LF2 for HW2"
       MemorySize: 128
@@ -21,7 +21,7 @@ Resources:
     Properties:
       FunctionName: LF1-index-photos
       Handler: lambda_function.lambda_handler
-      Runtime: python3.7
+      Runtime: python 3.7
       CodeUri: ./index-photos
       Description: "LF1 for HW2"
       MemorySize: 128
